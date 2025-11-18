@@ -17,12 +17,11 @@ class FakeManagementClientProvider implements ProviderInterface
     private $config;
 
     /**
-     * @Auth0Config("config")
-     *
      * @param array $config
      */
-    #[Auth0Config('config')]
-    public function __construct(array $config)
+    public function __construct(
+        #[Auth0Config('config')] array $config
+    )
     {
         $this->config = $config;
         unset($this->config['customDomain']);
